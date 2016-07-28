@@ -13,5 +13,20 @@ namespace MvcMovie.Controllers
         {
             return View(await context.Movie.ToListAsync());
         }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            // sanitizing the args
+            if(id==null)
+            {
+                return NotFound();
+            }
+            var movie = await context.Movie.FindAsync(id);
+            if(movie==null)
+            {
+                return NotFound();
+            }
+            return View(movie);
+        }
     } 
 }
