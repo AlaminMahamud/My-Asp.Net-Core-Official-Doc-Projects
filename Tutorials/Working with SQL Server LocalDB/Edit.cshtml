@@ -1,0 +1,22 @@
+@model MvcMovie.Models.Movie
+
+@
+{
+    ViewData["Title"] = "Edit Your Movie"; 
+}
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        Movie h4
+        Genre
+        ReleaseDate
+        Price
+        Title
+        request token XSRF
+    </div>
+</form>
+
+@section Scripts
+{
+    @{await Html.RenderPartialAsync("Validation Scripts Partial");}
+}
