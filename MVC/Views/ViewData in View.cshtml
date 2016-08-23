@@ -1,0 +1,20 @@
+@*
+    
+    Whenever you are passing data in to view page
+    you need to cast it.
+      
+
+*@
+
+
+@{
+    var address = ViewData["Address"] as Address
+}
+
+@ViewData["Greetings"] World!
+
+<address>
+    I 'm @address.Name<br/>
+    FROM - @address.HomeTown<br/>
+    Lives in - @address.City    
+</address>
